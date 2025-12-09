@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abby Christensen — Experience Design Portfolio</title>
+
+  <!-- Google Fonts: Playfair Display, Lora, Raleway, Cormorant Garamond -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Lora:wght@600&family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* === Your color palette === */
+      --dusty-rose: #C98686;      /* Dusty Rose — emotional warmth, authenticity */
+      --muted-denim: #6B7FA2;     /* Muted Denim — balance, intellect, trust */
+      --warm-sand: #D9C6B0;       /* Warm Sand — neutral background */
+      --sage-green: #9CAF88;      /* Sage Green — subtle accent */
+      --cream-white: #F8F4EC;     /* Cream White — clean space */
+      --copper-glow: #B26E3B;     /* Copper Glow — highlight */
+      --brand-bg: var(--cream-white);
+      --brand-text: #111213;
+      --brand-muted: #6B6F76;
+      --max-width: 1100px;
+      --radius: 12px;
+    }
+
+    /* Font stacks using your chosen fonts */
+    :root {
+      --font-display: "Playfair Display", serif;
+      --font-subhead: "Lora", serif;
+      --font-body: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --font-quote: "Cormorant Garamond", serif;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font-body);
+      color:var(--brand-text);
+      background:var(--brand-bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.55;
+      -webkit-text-size-adjust:100%;
+    }
+
+    /* Layout */
+    .container{max-width:var(--max-width);margin:0 auto;padding:40px 20px;}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:16px}
+    .brand img{height:56px;width:auto;border-radius:8px;object-fit:cover}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted-denim);font-weight:600;font-family:var(--font-subhead)}
+    nav a:hover{color:var(--dusty-rose)}
+
+    /* Hero */
+    .hero{display:flex;gap:40px;align-items:center;padding:48px 0}
+    .hero-left{flex:1}
+    .hero h1{
+      margin:0 0 12px 0;
+      font-family:var(--font-display);
+      font-size:44px;
+      color:var(--dusty-rose); /* main heading color = Dusty Rose for warmth */
+      letter-spacing:0.2px;
+      line-height:1.05;
+    }
+    .hero p.lead{
+      margin:0 0 18px 0;
+      color:var(--brand-muted);
+      max-width:70ch;
+      font-size:18px;
+      font-family:var(--font-body);
+    }
+    .cta-row{display:flex;gap:12px}
+    .btn{
+      background:var(--muted-denim);
+      color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;
+      display:inline-block;font-family:var(--font-body);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(27,39,83,0.12)}
+    .btn.secondary{
+      background:transparent;border:2px solid var(--dusty-rose);color:var(--dusty-rose);
+    }
+    .btn.important{background:var(--copper-glow);border:none;color:white}
+
+    /* About */
+    .about{background:white;border-radius:var(--radius);padding:24px;box-shadow:0 6px 20px rgba(16,24,40,0.04);margin-top:26px}
+    .two-col{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+    .profile-card{padding:18px;border-radius:10px;background:linear-gradient(180deg,var(--cream-white),#ffffff);}
+
+    /* Section headings and subheads */
+    h2{font-family:var(--font-subhead);font-size:22px;margin:0;color:var(--muted-denim)}
+    h3{font-family:var(--font-subhead);font-size:16px;margin:12px 0 6px 0;color:var(--dusty-rose)}
+
+    /* Projects */
+    .projects{margin-top:30px;display:grid;gap:18px}
+    .project{display:grid;grid-template-columns:1fr 240px;gap:16px;padding:18px;border-radius:10px;background:white;align-items:start}
+    .project .meta{font-size:14px;color:var(--brand-muted);font-family:var(--font-body)}
+    .project .title{font-weight:700;margin-bottom:6px;font-family:var(--font-subhead);color:var(--muted-denim)}
+    .project img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+    /* Pull quote / testimonial */
+    .pull-quote{
+      font-family:var(--font-quote);
+      font-style:italic;
+      color:var(--muted-denim);
+      background:linear-gradient(90deg, rgba(155,170,178,0.04), rgba(201,134,134,0.03));
+      padding:16px;border-radius:10px;margin:18px 0;
+    }
+
+    /* Resume */
+    .resume-card{margin-top:24px;padding:18px;background:white;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+    .resume-card a{font-weight:700;color:var(--muted-denim);text-decoration:none}
+
+    /* Contact */
+    footer{margin-top:40px;padding:24px 0;color:var(--brand-muted)}
+    .contact-form{display:grid;gap:12px;max-width:640px}
+    .input, textarea{padding:12px;border-radius:8px;border:1px solid #e6e6e9;background:white;font-family:var(--font-body)}
+    .footer-meta{font-size:13px;color:var(--brand-muted);font-family:var(--font-body)}
+
+    /* Small visual touches */
+    .accent-chip{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--warm-sand);color:var(--dusty-rose);font-weight:700;font-family:var(--font-subhead);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .two-col{grid-template-columns:1fr}
+      .project{grid-template-columns:1fr}
+      nav{display:none}
+      .hero{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header / Nav -->
+    <header>
+      <div class="brand">
+        <!-- Replace 'logo-placeholder.png' with your real logo file exported from your style guide -->
+        <img src="assets/Logo/My_Logo.png" alt="Abby Christensen logo">
+        <div>
+          <div style="font-weight:700;font-family:var(--font-subhead);color:var(--muted-denim)">Abby Christensen</div>
+          <div style="font-size:13px;color:var(--brand-muted);font-family:var(--font-body)">Experience Design & Management — BYU</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">My Work</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <h1>Turning customers and employees into a brand's biggest fans</h1>
+
+        <p class="lead">
+          I combine data-driven research and human-centered empathy to design experiences that create lasting customer and employee loyalty.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="#work">View my work</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+          <a class="btn important" href="#resume" style="margin-left:6px">Resume</a>
+        </div>
+      </div>
+
+      <div style="width:500px">
+        <!-- a quick profile image or brand-block using your anchor colors -->
+        <div style="border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--dusty-rose),var(--muted-denim));display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;padding:24px;">
+          <img src="assets/Headshot/My_Headshot.jpeg" alt="Abby Christensen Headshot" style="width:200px;height:200px;object-fit:cover;object-position:center 15%;border-radius:50%;margin-bottom:16px;">
+          <div style="text-align:center;padding:18px;">
+            <div style="font-weight:800;font-size:22px;font-family:var(--font-display)">Abby Christensen</div>
+            <div style="margin-top:8px;font-weight:600;font-family:var(--font-subhead)">Human-Centered Designer</div>
+            <div style="margin-top:12px;font-size:13px;opacity:0.95;font-family:var(--font-body)">others-oriented · creator of authentic connection · data-informed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h2 id="about-heading">About</h2>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <p style="margin-top:0;font-family:var(--font-body)">
+            <!-- Story & power statement guidance from the handout -->
+            Hello — I'm <strong style="font-family:var(--font-subhead);color:var(--muted-denim)">Abby Christensen</strong>! As a self-motivated explorer, I will never accept anything as “good enough”. I strive for excellence in all I say and do. Not only this, I am also a passionate altruist; I ensure all people in my atmosphere feel a sense of belonging and have their needs met. With these two strengths combined, I can guarantee timely success in technical situations as well as customer and employee satisfaction in the process. 
+
+          <h3 style="margin-top:18px">Quick Skills</h3>
+          <ul style="color:var(--brand-muted);font-family:var(--font-body)">
+            <li>People & Culture: Employee Engagement, Onboarding, Event Planning, Internal Communications</li>
+            <li>Technical: Microsoft Office, Tableau, Canva, Qualtrics, ChatGPT, Data Management</li>
+            <li>Languages: Spanish (fluent), ASL (intermediate)</li>
+          </ul>
+
+          <h3 style="margin-top:18px">My Story</h3>
+          <p style="color:var(--brand-muted);font-family:var(--font-body)">“I’m with you, till the end of the line”. My best friend and I quoted this line from Captain America, dressed with sunglasses, combat boots, and camo as we introduced the members of our high school choir to the Marvel-themed retreat we had planned for them. This day was going to be one of team building, adventure, and fun as we set out to make our choir a family in preparation for our final performance. Watching our members slowly turn into best friends over the course of those three hours, I recognized the power of intentionally designed experiences. As a director of customer and employee experience, I strive to make every organization transform the way my choir did, so that they will be with each other, “till the end of the line”. </p>
+
+          <div class="pull-quote" style="font-size:19px;">
+            "Going beyond expectations creates loyalty no marketing budget can buy" - Will Guidara
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div style="font-weight:800;font-family:var(--font-subhead);color:var(--muted-denim)">Snapshot</div>
+          <div style="color:var(--brand-muted);font-size:13px;margin-top:8px;font-family:var(--font-body)">
+            Faith · Relationships · Honesty · Achievement · Altruism
+          </div>
+          <div style="margin-top:12px">
+            <strong style="font-family:var(--font-subhead)">Core strengths</strong>
+            <ul style="color:var(--brand-muted);margin-top:8px;font-family:var(--font-body)">
+              <li>Empathy & collaboration</li>
+              <li>Data-informed decision-making</li>
+              <li>Customer-facing leadership</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong style="font-family:var(--font-subhead)">Download resume</strong>
+            <div style="margin-top:8px"><a href="assets/Resume/abby_christensen_resume.pdf" target="_blank" style="text-decoration:none;color:var(--muted-denim);font-weight:700">Abby Christensen Resume</a></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / PROJECTS -->
+    <section id="work" style="margin-top:28px">
+      <div style="display:flex;align-items:end;justify-content:space-between">
+        <h2 style="margin:0">My Work</h2>
+      </div>
+
+      <div class="projects">
+     
+        <article class="project" aria-labelledby="proj2-title">
+          <div>
+            <div class="title" id="proj2-title">Increase Member Engagement — Be Whole Do Good</div>
+            <div class="meta"> Oct 2025 - Dec 2025 · Member Delight Manager</div>
+
+            <p style="margin-top:10px;color:var(--brand-muted);font-family:var(--font-body)"><strong>Problem to solve:</strong> New members of the Be Whole Do Good program struggle to become active in the first month of the program, which leads to inactivity in following months.</p>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)">
+              <strong>Solution/Process:</strong></p>
+              <ul style="color:var(--brand-muted);font-family:var(--font-body)">
+                <li>Personally emailed and recorded a video for every new family to introduce myself, welcome them to the Be Whole Do Good family, and share available resources</li>
+                <li>Utilized a "New Member Milestones" checklist to personally guide families through the set up of their account</li>
+                <li>Remained in consistent contact with each new family throughout their first month to support and guide them</li>
+                <li>Contacted any families who had gone inactive in the past month, encouraging them to return</li>
+              </ul>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)"><strong>Impact / results:</strong> Heightened engagement in our online community and more families remaining active after three months than ever before.</p>
+
+            <p style="margin-top:12px;color:var(--brand-muted);font-family:var(--font-body)"><strong>Tools / skills:</strong> Kajabi, Loom, Gmail, Customer Support, Data Analysis</p>
+          </div>
+
+          <div>
+            <img src="assets/Projects/bewholedogood_logo.webp" alt="Be Whole Do Good Logo" style="width:100%;height:160px;object-fit:contain;border-radius:8px;">
+          </div>
+        </article>
+
+        <article class="project" aria-labelledby="proj1-title">
+          <div>
+            <div class="title" id="proj1-title">Ramadan Community Outreach Iftar Dinner — Lifting Hands International </div>
+            <div class="meta">Oct 2024 - Mar 2025 · Volunteer Event Team Logistics Lead</div>
+
+            <p style="margin-top:10px;color:var(--brand-muted);font-family:var(--font-body)">
+              <strong>Problem to solve:</strong> Many Muslim community members did not have a car or other form of transportation to attend our community outreach event.
+            </p>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)">
+            <strong>Solution/Process:</strong></p>
+            <ul style="color:var(--brand-muted);font-family:var(--font-body)">
+              <li>Collaborated with Lifting Hands International Logistics Manager to find volunteers and/or companies willing to pick up attendees</li>
+              <li>Communicated with the head of community service at the Ebay office in Salt Lake to secure rides for 4 Muslim families ranging in size from 4 to 13</li>
+              <li>Greeted families and volunteers upon their arrival to the event</li>
+            </ul>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)"><strong>Impact / results:</strong> 150+ Muslim and non-Muslim community members attended our Iftar dinner and friendships were formed between Muslim families and their volunteer drivers</p>
+
+            <p style="margin-top:12px;font-family:var(--font-body)"><strong>Tools / skills:</strong> Team Collaboration and Coordination, Excel, Internal Communication</p>
+
+            <p style="margin-top:12px;color:var(--brand-muted);font-family:var(--font-body)">Deliverables: Event Flyer, Excel screenshot of families and drivers</p>
+
+            <div style="margin-top:12px">
+              <a class="btn secondary" href="Assets/Projects/Iftar_Excel.jpeg"download>Download Excel Screenshot</a>
+            </div>
+          </div>
+
+          <div>
+            <img src="assets/Projects/Iftar_Flyer.jpeg" alt="Ramadan Service Night Flyer">
+            <div style="margin-top:8px;color:var(--brand-muted);font-size:13px;font-family:var(--font-body)">Event Flyer</div>
+          </div>
+        </article>
+
+
+        <article class="project" aria-labelledby="proj2-title">
+          <div>
+            <div class="title" id="proj2-title">Monthly Office Activities — BYU Financial Aid Office</div>
+            <div class="meta"> June 2025 - Dec 2025 · Office Specialist II + Activity Committee Member</div>
+
+            <p style="margin-top:10px;color:var(--brand-muted);font-family:var(--font-body)"><strong>Problem to solve:</strong> Staff have been feeling downhearted and unmotivated, therefore their productivity has gone down.</p>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)">
+              <strong>Solution/Process:</strong></p>
+              <ul style="color:var(--brand-muted);font-family:var(--font-body)">
+                <li>Collaborated with a five person activity committee from all different areas of the office</li>
+                <li>Planned monthly 1 - 1 1/2 hour long activities focused on team building and relaxation for 15+ employees</li>
+                <li>Personally designed one activity founded on getting to know each other with a jeopardy game and relaxation with a 15 minute meditation</li>
+              </ul>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)"><strong>Impact / results:</strong> Staff connection and excitement to come to work and get their job done has visually increased. Each month, staff are now excited for the chance to step away from their work and connect with their coworkers on a new level.</p>
+
+            <p style="margin-top:12px;font-family:var(--font-body)"><strong>Tools / skills:</strong>Team Leading and Coordination, Slack, Event Planning, ChatGPT, Problem Solving, Public Speaking</p>
+            <p style="margin-top:12px;color:var(--brand-muted);font-family:var(--font-body)">Deliverables: Office photo, Google Form to Collect Personal Information</p>
+          </div>
+
+          <div>
+            <img src="assets/Projects/Office_Activity.jpeg" alt="Office Activity">
+            <div style="margin-top:8px;color:var(--brand-muted);font-size:13px;font-family:var(--font-body)">Office together after a Thanksgiving activity.</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <a class="btn secondary" href="https://forms.gle/qsTDYQsZUXSDCmSGA" target="_blank">Open Google Form</a>
+          </div>
+        </article>
+
+        <article class="project" aria-labelledby="proj2-title">
+          <div>
+            <div class="title" id="proj2-title">Farm Tours in COVID19 — Andelin Family Farm</div>
+            <div class="meta">June 2020 · Private Tour Guide</div>
+
+            <p style="margin-top:10px;color:var(--brand-muted);font-family:var(--font-body)"><strong>Problem to solve:</strong> Andelin Family Farms wanted to create COVID19 friendly opportunities for families to get outside and connect with nature during this extremely difficult time.</p>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)">
+              <strong>Solution/Process:</strong></p>
+              <ul style="color:var(--brand-muted);font-family:var(--font-body)">
+                <li>Led alongside my manager a training for 10 tour guides on how to lead private tours for families while following COVID19 protocols</li>
+                <li>Directed between 4-6 private tours a day for families of 2-10 individuals</li>
+                <li>Taught elements of farm life and connection to nature to guests to increase their overall sense of wellbeing</li>
+              </ul>
+            <p style="color:var(--brand-muted);font-family:var(--font-body)"><strong>Impact / results:</strong> The Farm was not only able to remain open during the COVID19 pandemic, but was able to increase guests proclivity to recommend by 10%</p>
+
+            <p style="margin-top:12px;font-family:var(--font-body)"><strong>Tools / skills:</strong> Onboarding/Training, Public Speaking</p>
+            <p style="margin-top:12px;color:var(--brand-muted);font-family:var(--font-body)">Deliverable: Photo of Tour</p>
+          </div>
+
+          <div>
+            <img src="assets/Projects/Farm_Tour.jpeg" alt="Guiding Guests on a Hayride" style="width:100%;height:160px;object-fit:cover;object-position:center 20%;border-radius:8px;margin-bottom:16px;">
+            <div style="margin-top:8px;color:var(--brand-muted);font-size:13px;font-family:var(--font-body)">Guiding a group of guests through the hayride portion of their tour.</div>
+          </div>
+        </article>
+
+
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <div> <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"></div>
+      <h2 style="margin:0">My Resume</h2>
+      <div class="resume-card">
+        <div>
+          <strong style="font-family:var(--font-subhead);color:var(--muted-denim)">Resume Snapshot</strong>
+          <div style="color:var(--brand-muted);margin-top:6px;font-family:var(--font-body)">
+            <strong>Be Whole Do Good</strong> — Provo, UT<br>
+            Member Delight Manager (May 2025 - Present)
+            <ul style="margin-top:6px;margin-bottom:0;">
+              <li>Coached new clients through a personalized introduction to our product and services, allowing them to feel a familial connection to our team from the first interaction</li>
+              <li>Promoted wellness program at conventions, generating 24 new leads through personalized interactions that strengthened community engagement</li>
+              <li>Filmed 4 motivational training videos for teens, enhancing internal communication tools for program participants and families</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <a href="assets/Resume/abby_christensen_resume.pdf" target="_blank">Open full resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:26px">
+      <h2 style="font-family:var(--font-subhead);color:var(--muted-denim)">Contact</h2>
+      <div style="display:flex;gap:28px;align-items:flex-start;margin-top:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <p style="color:var(--brand-muted);font-family:var(--font-body)">If you'd like to hear more about my experience in customer engagement, team collaboration, and data analysis, reach out below.</p>
+
+          <div style="flex:1;min-width:280px">
+
+  <div style="margin-top:20px">
+    <a class="btn" href="mailto:abbycecile8@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Abby,%0A" style="font-size:18px;padding:16px 24px;">Email me</a>
+  </div>
+</div>
+        </div>
+
+        <aside style="min-width:240px">
+          <div style="background:white;padding:16px;border-radius:10px">
+            <div style="font-weight:800;font-family:var(--font-subhead);color:var(--muted-denim)">Contact info</div>
+            <div style="color:var(--brand-muted);margin-top:8px;font-family:var(--font-body)">abbycecile8@gmail.com<br />(775) 857-5342<br/>Provo, UT</div>
+            <div style="margin-top:12px;font-size:16px;color:var(--brand-muted);font-family:var(--font-body)">
+              LinkedIn: <a href="https://www.linkedin.com/in/abby-marchant" target="_blank" style="color:var(--muted-denim)">linkedin.com/in/abby-marchant</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+  </div>
+</body>
+</html>
